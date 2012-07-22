@@ -22,6 +22,8 @@ describe "User pages" do
         fill_in "Email",        with: "user@example.com"
         fill_in "Password",     with: "foobar"
         fill_in "Confirmation", with: "foobar"
+        
+       
       end
       
 
