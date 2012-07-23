@@ -4,12 +4,24 @@ describe "User pages" do
 
   subject { page }
   
+  
+  describe "index" do
+      before do
+        sign_in FactoryGirl.create(:user)
+        FactoryGirl.create(:user, name: "Bob", email: "bob@example.com")
+        visit users_path
+      end
+
+    end
+  
   describe "signup" do
 
     before { visit signup_path }
 
     let(:submit) { "Create my account" }
 
+    
+    
     describe "with invalid information" do
       it "should not create a user" do
         expect { click_button submit }.not_to change(User, :count)
@@ -32,6 +44,8 @@ describe "User pages" do
       end
     end
   end
+  
+  
   
   describe "edit" do
       let(:user) { FactoryGirl.create(:user) }

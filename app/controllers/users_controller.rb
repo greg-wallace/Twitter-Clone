@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:index, :edit, :update]
-before_filter :correct_user,   only: [:edit, :update]
+  before_filter :correct_user,   only: [:edit, :update]
 
 
 def show
@@ -34,7 +34,6 @@ def create
     end
     
     def update
-        @user = User.find(params[:id])
         if @user.update_attributes(params[:user])
           flash[:success] = "Profile updated"
           sign_in @user
@@ -43,6 +42,11 @@ def create
           render 'edit'
         end
       end
+      
+      
+      
+      
+      
       
       private
 
@@ -54,9 +58,10 @@ def create
           end
 
           def correct_user
-            @user = User.find(params[:id])
-            redirect_to(root_path) unless current_user?(@user)
-          end
+                @user = User.find(params[:id])
+                redirect_to(root_path) unless current_user?(@user)
+              end
+          
           
           
   
