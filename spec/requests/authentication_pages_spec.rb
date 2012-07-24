@@ -65,6 +65,8 @@ describe "Authentication" do
                       page.should have_selector('title', text: 'Edit user')
                     end
                   end
+                  
+                  
                 end
                   
         end
