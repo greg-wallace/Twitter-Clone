@@ -1,13 +1,13 @@
- <%= f.label :name %>
-  <%= f.text_field :name %>
+<%= render 'shared/error_messages' %>
 
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+<%= f.label :name %>
+<%= f.text_field :name %>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+<%= f.label :email %>
+<%= f.text_field :email %>
 
-  <%= f.label :password_confirmation, "Confirm Password" %>
-  <%= f.password_field :password_confirmation %>
+<%= f.label :password %>
+<%= f.password_field :password %>
 
-  <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+<%= f.label :password_confirmation, "Confirm Password" %>
+<%= f.password_field :password_confirmation %>
