@@ -50,11 +50,14 @@ def create
       
       
       def destroy
-          User.find(params[:id]).destroy
+          User.find(params[:id]).destroy 
           flash[:success] = "User destroyed."
           redirect_to users_path
+          
+          unless current_user.admin? 
+          
         end
-      
+      end
       
       
       
