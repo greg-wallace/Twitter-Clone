@@ -29,7 +29,6 @@ module SessionsHelper
             redirect_to signin_path, notice: "Please sign in."
           end
         end
-      
     
     def sign_out
         self.current_user = nil
