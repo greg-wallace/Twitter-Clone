@@ -43,8 +43,24 @@ module SampleApp
     config.encoding = "utf-8"
     
     
-    
+    #Im not sure wht this does
     config.active_record.whitelist_attributes = true
+    
+    
+    #this is my contact form from tutorial at http://matharvard.ca/posts/2011/aug/22/contact-form-in-rails-3/
+    config.action_mailer.smtp_settings = {
+      :address              => "smtp.gmail.com",
+      :port                 => 587,
+      :domain               => "icodeforu.com",
+      :user_name            => "greg@icodeforu.com",
+      :password             => "OmyKiss135",
+      :authentication       => :plain,
+      :enable_starttls_auto => true
+    }
+
+    config.action_mailer.default_url_options = {
+      :host => "icodeforu.com"
+    }
     
 
     # Configure sensitive parameters which will be filtered from the log file.
