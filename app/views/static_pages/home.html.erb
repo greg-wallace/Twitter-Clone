@@ -1,5 +1,21 @@
 <% if signed_in? %>
+
  <%= render 'logged_in_home' %>
+
+<section>
+	<%= render 'shared/user_info' %>
+</section>
+
+<section>
+	<%= render 'shared/stats' %>
+</section>
+
+<section>
+	<%= render 'shared/micropost_form' %>
+</section>
+
 <% else %>
+
   <%= render 'not_logged_in_home' %>
+
 <% end %>

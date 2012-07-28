@@ -30,7 +30,9 @@ describe User do
   it { should_not be_admin }
   it { should respond_to(:microposts) }
   it { should respond_to(:feed) }
-    describe "micropost associations" do
+  it { should respond_to(:relationships) }
+    
+        describe "micropost associations" do
 
         before { @user.save }
         let!(:older_micropost) do 
@@ -39,9 +41,7 @@ describe User do
         let!(:newer_micropost) do
           FactoryGirl.create(:micropost, user: @user, created_at: 1.hour.ago)
         end
-        .
-        .
-        .
+       
         describe "status" do
           let(:unfollowed_post) do
             FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
